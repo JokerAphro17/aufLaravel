@@ -6,9 +6,7 @@
            <h1 class="demand">GESTION</h1>
         </div>
         <div class='col-4 text-center d-flex col-sm-4'>
-            
                 <h3 class="bg-warning rond"><br> abonné(s)</h3>
-            
         </div>
     </div>
     <div class='row '>
@@ -34,7 +32,8 @@
                         <tbody>
 
                             @foreach($etudiants as $etudiant)
-                             <tr class='ligne'>
+                             <tr class='ligne' id ='{{$etudiant->id}}' value='{{$etudiant->id }}'>
+
                                     <td class='pl-4 '>{$i}</td>
                                     <td>
                                         <h5 class='font-medium mb-0'>{{$etudiant->nom
@@ -73,10 +72,9 @@
                                     
                                     <td>
                                         
-                                        <a  href={{
-                                            route('delete',['id'=>$etudiant->id])
-                                            }}
-                                        ><button type='button' id='delete' class='btn btn-outline-info btn-circle btn-lg btn-circle ml-2'><i class='fa fa-trash text-danger'></i></button></a> 
+                                        <button type='button'
+                                        value="{{$etudiant->id}}"
+                                        class='btn delete btn-outline-info btn-circle btn-lg btn-circle ml-2'><i class='fa fa-trash text-danger'></i></button> 
                                         <a href={{
                                             route('edit',['id'=>$etudiant->id])
                                         
@@ -85,7 +83,6 @@
                                     </td>
                                     </tr>
                                     @endforeach
-                            
                         </tbody>
                         </table>
                     </div>

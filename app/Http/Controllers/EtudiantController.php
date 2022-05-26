@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class EtudiantController extends Controller
 {   
-    protected $fillable = [''];
     public function index ()
     {   
         

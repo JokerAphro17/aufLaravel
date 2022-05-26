@@ -73,7 +73,9 @@
                     <span  class='input-group-text'
                     style='width:100%' id='inputGroup-sizing-sm'>NOM:
                     <span style='font-weight: bold;'>&nbsp;
-                    {{$etudiant->nom}}
+                    {{
+                        $etudiant ? $etudiant->nom : 'Pas encore d\'enregistrement'
+                    }}
                     </span></span>
                     
                   </div>
@@ -82,7 +84,7 @@
                     style='width:100%' id='inputGroup-sizing-sm'>PRENOMS:
                     <span style='font-weight: bold;'>&nbsp;
                     {{
-                      $etudiant->prenom
+                      $etudiant ? $etudiant->prenom : '- '
                     }}</span></span>
                     
                   </div>
@@ -90,7 +92,7 @@
                     <span class='input-group-text'
                     style='width:100%' id='inputGroup-sizing-sm'>DATE DE NAISSANCE:
                     <span style='font-weight: bold;'>&nbsp;{{
-                       $etudiant->date_naissance
+                       $etudiant ? $etudiant->date_naissance : '-'
                     }}
                     </span></span>
                     
@@ -99,21 +101,31 @@
                     <span class='input-group-text'
                     style='width:100%' id='inputGroup-sizing-sm'>DEBUT D'ABONNEMENT:
                     <span style='font-weight: bold;'>&nbsp;
-                    {{$etudiant->date_abonne}}</span></span>
+                    {{
+                      $etudiant ? $etudiant->date_abonne : '-'
+                    
+                    }}</span></span>
                   
 
                   </div>
                   <div class='inpu2 input-group-sm mb-3'>
                     <span class='input-group-text' id='inputGroup-sizing-sm' style='width:100%'>NUMERO DE TEL: 
                     <span style='font-weight: bold;'>&nbsp;
-                    {{$etudiant->telephone}}</span></span>
+                    {{
+                      $etudiant ? $etudiant->telephone : '-'
+                    
+                    }}</span></span>
                     
 
                   </div>
                   <div class='inpu2 input-group-sm mb-3'>
                     <span class='input-group-text'
                     style='width:100%' id='inputGroup-sizing-sm'>EMAIL : 
-                    <span style='font-weight: bold; font-size:100%'>&nbsp;{{$etudiant->email}}</span>
+                    <span style='font-weight: bold; font-size:100%'>&nbsp;{{
+                      $etudiant ? $etudiant->email : '-'
+                    
+                    
+                    }}</span>
                 </span>
                     
                   </div>

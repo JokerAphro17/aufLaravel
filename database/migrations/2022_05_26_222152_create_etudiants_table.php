@@ -19,8 +19,8 @@ class CreateEtudiantsTable extends Migration
             $table->string('prenom');
             $table->date('date_naissance');
             $table->date('date_abonne');
-            $table->string('email');
-            $table->string('telephone');
+            $table->string('email')->unique();
+            $table->string('telephone')->unique();
             $table->timestamps();
         });
     }
