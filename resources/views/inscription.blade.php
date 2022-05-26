@@ -117,9 +117,10 @@
                 </span>
                     
                   </div>
-                  <div class='row justify-content-center mt-5' >
+                  <div class='row justify-content-center ' >
                       
-                        <a href='list.php'  class=' col-6 envoi btn btn-warning'>Liste</a>
+                        <a href={{ route('list')
+                        }}  class=' text-white  col-6 envoi btn btn-warning'>Liste</a>
                   </div>
             </div>
 
