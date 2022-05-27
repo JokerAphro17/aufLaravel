@@ -11,20 +11,26 @@ class EtudiantController extends Controller
     public function index ()
     {   
         
-        if( auth()->check() ){
+
             
             $etudiant = Etudiant::orderBy('created_at', 'desc')->first();
             return view('inscription', compact('etudiant'));
 
 
 
-        return view('inscription');}
-        else{
-            return view('auth.login');
-        }
+        
     }
     public function store (Request $request)
+
     {
+        $validate = $request->validate([
+            'nom' => 'required|min:3',
+            'prenom' => 'required|min:3',
+            'email' => 'required|email',
+            'telephone' => 'required|numeric',
+            'date_abonne' => 'required|date',
+        ]);
+
         $etudiant = new Etudiant();
         $etudiant->nom = $request->input('nom');
         $etudiant->prenom = $request->input('prenom');
@@ -36,7 +42,7 @@ class EtudiantController extends Controller
         $last_id = $etudiant->id;
         $etudiant = Etudiant::orderBy('created_at', 'desc')->first();
 
-        return view('inscription',compact('etudiant'))->with('success', 'Votre inscription a bien été prise en compte');
+        return redirect('inscription')->with('success', 'Votre inscription a bien été prise en compte');
     }
     public function list ()
     {
@@ -59,13 +65,13 @@ class EtudiantController extends Controller
         $etudiant->telephone = $request->input('telephone');
         $etudiant->save();
         $etudiants = Etudiant::All();
-        return view('list', compact('etudiants'))->with('success', 'Votre inscription a bien été prise en compte');
+        return redirect('list')->with('success', 'Votre inscription a bien été modifiée');
     }
     public function destroy ($id)
     {
         $etudiant = Etudiant::find($id);
         $etudiant->delete();
-        return redirect('/list')->with('success', 'Votre inscription a bien été supprimée');
+        return redirect('/list');
     }
     
 }

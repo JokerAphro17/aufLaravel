@@ -11,15 +11,17 @@
 
 
     <!-- Scripts -->
+    <script src ={{ asset('js/jquery-3.6.0.min.js') }} ></script>
+    <script src ={{ asset('js/sweetalert.min.js') }} ></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src= "{{ asset('js/index.js') }}" defer> </script>
+    <script src= "{{ asset('js/jquery.sweet-modal.min.js') }}" > </script>
+    <link rel="stylesheet" href="{{ asset('css/jquery.sweet-modal.min.css') }}">
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src ={{ asset('js/jquery-3.6.0.min.js') }} ></script>
-    <script src ={{ asset('js/sweetalert.min.js') }} ></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
@@ -88,5 +90,8 @@
             @yield('content')
         </main>
     </div>
+
 </body>
+@include('flash-message')
+
 </html>

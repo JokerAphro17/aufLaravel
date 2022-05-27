@@ -5,11 +5,13 @@
         <div class='col-md-4   col-sm-4 ms-1  text-light text-center  '>
            <h1 class="demand">GESTION</h1>
         </div>
-        <div class='col-4 text-center d-flex col-sm-4'>
+        {{-- <div class='col-4 text-center d-flex col-sm-4'>
                 <h3 class="bg-warning rond"><br> abonné(s)</h3>
-        </div>
+        </div> --}}
     </div>
+    
     <div class='row '>
+       
         <div class='col table'>
         <div class='container'>
         <div class='row'>
@@ -30,11 +32,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @php 
+                                $i=1;
+                            @endphp
 
                             @foreach($etudiants as $etudiant)
-                             <tr class='ligne' id ='{{$etudiant->id}}' value='{{$etudiant->id }}'>
+                             <tr class='ligne' id ='{{$etudiant->id}}'>
 
-                                    <td class='pl-4 '>{$i}</td>
+                                    <td class='pl-4 '>{{$i}}</td>
                                     <td>
                                         <h5 class='font-medium mb-0'>{{$etudiant->nom
                                         
@@ -82,6 +87,9 @@
                                         <button type='button' class='btn  btn-outline-info btn-circle btn-lg btn-circle ml-2'><i class='fa fa-edit'></i> </button></a>
                                     </td>
                                     </tr>
+                                    @php 
+                                        $i++;
+                                    @endphp
                                     @endforeach
                         </tbody>
                         </table>
