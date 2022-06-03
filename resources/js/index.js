@@ -38,7 +38,7 @@
 function delet(id) {
     swal({
         title: "Etes-vous sûr?",
-        text: "Vous allez supprimer definitivement l'abonné! de id: " + id,
+        text: "Vous allez supprimer definitivement l'abonné!",
         icon: "warning",
         buttons: true,
         dangerMode: true,

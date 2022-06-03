@@ -25,7 +25,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::post('/inscription', [App\Http\Controllers\EtudiantController::class, 'store'])->name('inscription.store')->middleware('auth');
 
 
-Route::get('/inscription', [App\Http\Controllers\EtudiantController::class, 'index'])->name('inscription.index')->middleware('auth');
+Route::get('/inscription/formulaire', [App\Http\Controllers\EtudiantController::class, 'index'])->name('inscription.index')->middleware('auth');
 
 
 Route::get('/list', [App\Http\Controllers\EtudiantController::class, 'list'])->name('list')->middleware('auth');

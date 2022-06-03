@@ -39,6 +39,7 @@ class EtudiantController extends Controller
         $etudiant->email = $request->input('email');
         $etudiant->telephone = $request->input('telephone');
         $etudiant->save();
+        
         $last_id = $etudiant->id;
         $etudiant = Etudiant::orderBy('created_at', 'desc')->first();
 
